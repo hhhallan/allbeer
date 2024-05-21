@@ -1,7 +1,9 @@
-import { MobileNav } from "@/components/mobile-nav";
-import { Nav } from "@/components/nav";
+import { MobileNav } from "@/components/navigation/mobile-nav";
 import { Beer } from "lucide-react";
 import Link from "next/link";
+import { Nav } from "@/components/navigation/nav";
+import { NavItem } from "@/components/nav-item";
+import { routes } from "@/constants";
 
 export const Header = () => {
   return (
@@ -11,8 +13,26 @@ export const Header = () => {
           <Beer className="size-6 text-green-500" />
           <span className="text-lg font-semibold">AllBeer</span>
         </Link>
-        <Nav />
-        <MobileNav />
+        <Nav>
+          {routes.map((route) => (
+            <NavItem
+              key={route.label}
+              label={route.label}
+              href={route.href}
+              mobile={false}
+            />
+          ))}
+        </Nav>
+        <MobileNav>
+          {routes.map((route) => (
+            <NavItem
+              key={route.label}
+              label={route.label}
+              href={route.href}
+              mobile={true}
+            />
+          ))}
+        </MobileNav>
       </div>
     </header>
   );
