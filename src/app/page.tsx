@@ -45,7 +45,7 @@ const AppPage = () => {
                 alt="Brasserie AllBeer"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="310"
-                src="/placeholder.svg"
+                src="/allbeer.png"
                 width="550"
               />
             </div>
